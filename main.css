@@ -209,12 +209,6 @@ body {
   color: var(--textcolor-sub);
 }
 
-.section-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
 .contact-content {
   display: flex;
   flex-direction: column;
