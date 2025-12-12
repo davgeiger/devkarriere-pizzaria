@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -9,11 +10,12 @@ html,
 body {
   height: 100%;
   background-color: #1a1a1a;
-
+  font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
 
   --primary-color: #ff3030;
   --text-color: #fff;
+  --textcolor-sub: #ddd;
   --site-background: #1a1a1a;
 }
 
@@ -25,15 +27,18 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .nav-item,
 .link,
 .copyright {
-  padding: 1.4rem;
   color: var(--text-color);
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
+
   transition: all 0.2s ease-in-out;
 }
 
@@ -57,14 +62,15 @@ body {
 }
 
 .heading-main {
+  margin: 0 0 1rem 0;
   color: var(--text-color);
-  font-family: "Roboto";
-  font-size: 3em;
+  font-family: "Lobster", sans-serif;
+  font-size: 3rem;
+  line-height: 3rem;
 }
 
 .sub-text {
-  color: var(--text-color);
-  font-family: "Roboto";
+  color: var(--textcolor-sub);
   font-size: 2em;
   margin-top: 1em;
 }
@@ -104,6 +110,7 @@ body {
 .heading-about,
 .heading-opening,
 .heading-contact {
+  margin: 2rem 0 1rem 0;
   width: fit-content;
   text-transform: uppercase;
   color: var(--text-color);
@@ -112,14 +119,14 @@ body {
 }
 
 .about-paragraph {
-  font-size: 1.2rem;
-  color: var(--text-color);
+  font-size: 0.9rem;
+  color: var(--textcolor-sub);
 }
 
 .button,
 .button-inverted {
   width: fit-content;
-  margin-top: 3em;
+  margin-top: 1.5em;
   padding: 20px;
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -198,10 +205,13 @@ body {
   justify-content: space-between;
 }
 
+.days {
+  color: var(--textcolor-sub);
+}
+
 .section-contact {
   display: flex;
   flex-direction: column;
-  align-content: flex-end;
   gap: 2rem;
 }
 
@@ -211,24 +221,34 @@ body {
   gap: 2rem;
 }
 
+.section-contact .heading-contact {
+  margin-top: 0;
+}
+
+.address {
+  margin-top: 0.5rem;
+  color: var(--textcolor-sub);
+}
+
 .contact-image {
   width: 100%;
 }
 
-.address {
-  color: var(--text-color);
-}
-
 .buttons {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
   margin-top: 2rem;
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  text-align: center;
   background-color: #333333;
 }
 
@@ -237,6 +257,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+.copyright {
+  margin-top: 1rem;
+  color: var(--textcolor-sub);
 }
 
 @media only screen and (min-width: 600px) {
@@ -253,12 +279,39 @@ body {
     padding: 1.2rem 2.5rem;
   }
 
-  .nav {
+  .nav,
+  .links {
     gap: 20px;
+    font-size: 1rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+
+  .contact-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact-image {
+    width: 60%;
+  }
+
+  .footer {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    gap: 3rem;
   }
 }
 
 @media only screen and (min-width: 1000px) {
+  .nav,
+  .links {
+    gap: 4rem;
+  }
+
   .heading-main {
     font-size: 6rem;
     line-height: 6.5rem;
@@ -270,20 +323,44 @@ body {
     margin-top: 6rem;
   }
 
+  .about-img-container {
+    gap: 1rem;
+  }
+
+  .about-imgs-small {
+    gap: 1rem;
+  }
+
+  .opening-hours {
+    margin-top: 2rem;
+  }
+
   .heading-opening {
     font-size: 2rem;
   }
 
   .hours-entry {
     width: 20rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
-  .contact-content {
+  .section-contact .heading-contact {
+    margin-bottom: 2rem;
+  }
+
+  .address {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .buttons {
     flex-direction: row;
+    gap: 2rem;
   }
 
   .contact-image {
-    width: 60%;
+    width: 50%;
   }
 
   .links {
